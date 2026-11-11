@@ -1,0 +1,121 @@
+:root {
+    --card-bg: rgba(15, 12, 41, 0.85);
+    --primary-color: #ff0055;
+    --secondary-color: #00e5ff;
+    --button-bg: linear-gradient(135deg, #ff0055 0%, #7600ec 100%);
+    --button-hover: linear-gradient(135deg, #00e5ff 0%, #7600ec 100%);
+    --text-color: #e0e6ed;
+    --border-color: #00e5ff;
+    --shadow-color: rgba(255, 0, 85, 0.4);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+   
+    /* Fundo estilo Cyber-Anime com luzes de néon e SVG geométrico */
+    background-color: #0f0c29;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M0 0h80v80H0z' fill='none'/%3E%3Cpath d='M40 0l40 40-40 40L0 40z' stroke='%237600ec' stroke-width='1' stroke-opacity='0.15' fill='none'/%3E%3Ccircle cx='40' cy='40' r='10' stroke='%2300e5ff' stroke-width='1' stroke-opacity='0.1' fill='none'/%3E%3C/svg%3E"),
+        radial-gradient(circle at 20% 20%, #7600ec 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, #ff0055 0%, transparent 40%),
+        linear-gradient(135deg, #0f0c29 0%, #24243e 100%);
+    background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Cartão Principal com Glassmorphism */
+.caixa-principal {
+    background: var(--card-bg);
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 30px var(--shadow-color), inset 0 0 15px rgba(0, 229, 255, 0.2);
+    max-width: 550px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(12px);
+}
+
+/* Títulos */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary-color);
+    font-size: 2.3rem;
+    font-weight: 900;
+    margin-bottom: 0.2rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.subtitulo {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.8rem;
+    font-weight: 600;
+}
+
+/* Textos e perguntas */
+p, .caixa-perguntas {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
+}
+
+.caixa-perguntas {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.15rem;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Botões com gradiente neon e animação rápida */
+button {
+    background: var(--button-bg);
+    color: #ffffff;
+    border: none;
+    padding: 16px 24px;
+    margin: 10px 0;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 0, 85, 0.3);
+}
+
+button:hover {
+    background: var(--button-hover);
+    transform: scale(1.02);
+    box-shadow: 0 0 20px var(--secondary-color);
+    color: #000;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Controle de exibição das telas */
+.caixa-perguntas,
+.caixa-alternativas,
+.caixa-resultado {
+    display: none;
+    margin-top: 20px;
+}
+
+.mostrar {
+    display: block !important;
+}
